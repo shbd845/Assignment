@@ -1,7 +1,8 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse,redirect
 from app1.models import Contact
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
+from .utils import send_email_to_client
 
 # Create your views here.
 def index(request):
@@ -44,6 +45,7 @@ def signup(request):
              user.first_name=firstname
              user.last_name=lastname
              user.save()
+             send_email_to_client(email)
              context={"success":True}
      return render(request,'signup.html',context)
 
@@ -52,3 +54,4 @@ def logout_view(request):
     logout(request)
     context={"success":"logout"}
     return render(request,"index.html",context)
+    # return redirect("index",context)
