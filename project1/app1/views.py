@@ -54,4 +54,3 @@ def logout_view(request):
     logout(request)
     context={"success":"logout"}
     return render(request,"index.html",context)
-    # return redirect("index",context)
