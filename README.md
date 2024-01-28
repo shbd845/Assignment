@@ -13,11 +13,11 @@ Please follow the below guidelines to setup the development environment.
 - Clone the repository: https://github.com/shbd845/Assignment.git
 - Change the working directory to your cloned repository folder: `cd ../{your_repository_folder}`
 - Installing the virtualenv package: `pip install virtualenv`
-- Creating the virtual environment: `virtualenv env`
+- Creating the virtual environment: `python -m virtualenv env`
 - Activating the environment: `env\Scripts\activate`
 - Set up the `.env` file in the `/project1` folder.
 	- The `.env` file should be created from the `.env.example` file [here](https://github.com/shbd845/Assignment/blob/master/.env.example).
-- Installing the required modules: `pip install -r requirements.txt`
+- Installing the required modules: `pip install -r requirements.txt --user`
 - Making the migrations ready: `python manage.py makemigrations`
 - Migrating the models to the DB: `python manage.py migrate`
 - Running the server: `python manage.py runserver`
