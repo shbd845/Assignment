@@ -41,12 +41,16 @@ def signup(request):
              username=request.POST.get("username")
              email=request.POST.get("email")
              pwd=request.POST.get("password")
+             user=User.objects.filter(username=username)
+             if user.exists():
+                   context={"success":"error"}
+                   return render(request,'signup.html',context)
              user = User.objects.create_user(username,email,pwd)
              user.first_name=firstname
              user.last_name=lastname
              user.save()
              send_email_to_client(email)
-             context={"success":True}
+             context={"success":"True"}
      return render(request,'signup.html',context)
 
 def logout_view(request):
