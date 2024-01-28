@@ -16,7 +16,7 @@ Please follow the below guidelines to setup the development environment.
 - Creating the virtual environment: `virtualenv env`
 - Activating the environment: `env\Scripts\activate`
 - Set up the `.env` file in the `/project1` folder.
-	- The `.env` file should be created from the `.env.example` file [here]().
+	- The `.env` file should be created from the `.env.example` file [here](https://github.com/shbd845/Assignment/blob/master/.env.example).
 - Installing the required modules: `pip install -r requirements.txt`
 - Making the migrations ready: `python manage.py makemigrations`
 - Migrating the models to the DB: `python manage.py migrate`
